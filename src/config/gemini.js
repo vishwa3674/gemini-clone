@@ -6,19 +6,18 @@ import {
     HarmBlockThreshold,
 } from "@google/generative-ai"
 
-const MODEL_NAME = "gemini-2.5-pro-preview-03-25";
-const API_KEY = "AIzaSyBaODGbNqnzWLTbPTRodYZ_DthgHVHmA0s";
+const MODEL_NAME = "gemini-2.0-flash";
+const API_KEY = "AIzaSyB3_3d1G404oCxTYiIspnqeeIzdxwA2vsc";
 
 async function runChat(prompt){
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({model: MODEL_NAME});
 
     const generationConfig = {
-        temperature: 1,
-        topP: 0.95,
-        topK: 64,
-        maxOutputTokens: 65536,
-        responseMimeType: 'text/plain',
+        temperature: 0.9,
+        topP: 1,
+        topK: 1,
+        maxOutputTokens: 1024,
     };
 
     const safetySettings = [
@@ -50,6 +49,7 @@ async function runChat(prompt){
     const result = await chat.sendMessage(prompt);
     const response = result.response;
     console.log(response.text());
+    return response.text();
 }
 
 export default runChat;

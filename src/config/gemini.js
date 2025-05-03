@@ -17,7 +17,7 @@ async function runChat(prompt){
         temperature: 0.9,
         topP: 1,
         topK: 1,
-        maxOutputTokens: 1024,
+        maxOutputTokens: 512,
     };
 
     const safetySettings = [

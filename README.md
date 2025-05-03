@@ -1,12 +1,81 @@
-# React + Vite
+# Gemini Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clone of Google's Gemini chatbot built with **React.js**. This project simulates the core functionality of Gemini, allowing users to enter prompts and receive AI-generated responses.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Real-time prompt handling
+* Response loading indicator
+* Context-aware conversations
+* Error handling with fallback behavior
+* Responsive and clean UI
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React.js** (Functional Components & Hooks)
+* **CSS**
+* **JavaScript**
+* **Vite** for blazing fast builds
+
+## 📁 Project Structure
+
+```
+/your-gemini-clone
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Main/
+│   │   │   ├── Main.css
+│   │   │   └── Main.jsx
+│   │   ├── Sidebar/
+│   │   │   ├── Sidebar.css
+│   │   │   └── Sidebar.jsx
+│   ├── config/
+│   │   └── gemini.js
+│   ├── context/
+│   │   └── Context.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── eslint.config.js
+└── README.md
+```
+
+## ⚙️ Setup & Run
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/gemini-clone.git
+cd gemini-clone
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Start the development server**
+
+```bash
+npm run dev
+```
+
+4. Visit `http://localhost:5173` in your browser
+
+## 🧠 How it Works
+
+* When a user types a prompt and sends it, the `onSent` function triggers an asynchronous function (`runChat`) that simulates or communicates with an AI model.
+* Prompt history is maintained using a `prevPrompts` state array.
+* Errors are gracefully handled, and the app provides visual feedback during loading.
+
+---
+
+Feel free to contribute or open issues! ⭐
